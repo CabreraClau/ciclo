@@ -7,6 +7,8 @@
 using System;
 using ClassLibrary;
 
+
+
 namespace ConsoleApplication
 {
     /// <summary>
@@ -14,14 +16,19 @@ namespace ConsoleApplication
     /// </summary>
     public static class Program
     {
-        /// <summary>
-        /// Punto de entrada al programa principal.
-        /// </summary>
+
         public static void Main()
         {
-            var train = new Train();
-            train.StartEngines();
-            Console.WriteLine("Hello World!");
+            int Length = 12;
+            for (int i = 0; i < Length; i++)
+            {
+                Train Train1 = new Train(i.ToString());
+            }
+
+            Train train1 = new Train("The las train to London");
+            Train train2 = new Train("The las train to London");
+            Train train3 = new Train("Runawat Train");
         }
     }
 }
+

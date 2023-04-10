@@ -12,13 +12,35 @@ namespace ClassLibrary
     /// Esta clase representa un tren muy básico.
     /// </summary>
     public class Train
+
     {
+        private int count=0;
+        private string Trenid { get; set;}
+        
+        public Train(String trenid)  //recibe como parametro el identificadpr del tren aumentando en si en el contador 
+                                      //en si en el contador un valor        
+        {
+            this.Trenid = trenid;
+            count++;
+            Console.WriteLine("Este es el tren en creación numero: ");
+            
+        }
+
+        ~Train()
+        {
+            count--;
+            Console.WriteLine("este es el tren en destrucción numero: ");
+        }
+       
+        
         /// <summary>
         /// Obtiene un valor que indica si las maquinas del tren han sido encendidas o no.
         /// </summary>
         /// <value><c>true</c> si las máquinas fueron encendidas, <c>false</c> en caso contrario.</value>
         public bool IsEngineStarted { get; private set; }
-
+        
+        
+       
         /// <summary>
         /// Enciende las máquinas del tren.
         /// </summary>
@@ -57,4 +79,6 @@ namespace ClassLibrary
             return this.IsEngineStarted;
         }
     }
+    
+
 }
